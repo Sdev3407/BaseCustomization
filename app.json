@@ -1,0 +1,109 @@
+{
+  "id": "78be200d-a550-4518-a7d7-c7eb76086f0d",
+  "name": "Base App",
+  "publisher": "Microsoft",
+  "version": "23.5.16502.16757",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "target": "OnPrem",
+  "dependencies": [{
+      "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "23.5.16502.16757"
+    },
+    {
+      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "23.5.16502.16757"
+    },
+    {
+      "id": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
+      "publisher": "Microsoft",
+      "name": "India GST",
+      "version": "23.5.16502.16758"
+    },
+    {
+      "id": "2dc39818-e0f0-42b6-99eb-ba29dc5f4102",
+      "publisher": "Microsoft",
+      "name": "India Gate Entry",
+      "version": "23.5.16502.16758"
+    },
+    {
+      "id": "050f6146-bffd-40de-942c-d0dd510ec20f",
+      "publisher": "Microsoft",
+      "name": "India Reports",
+      "version": "23.5.16502.16758"
+    },
+    {
+      "id": "eae5779e-7797-4c4c-977e-7516652b7a65",
+      "publisher": "Microsoft",
+      "name": "India TDS",
+      "version":"23.5.16502.16757"
+    },
+    {
+      "id": "eddcf82e-482c-49d1-836b-ad0284f2c5b0",
+      "publisher": "Microsoft",
+      "name": "India TCS",
+      "version": "23.5.16502.16757"
+    },
+     {
+      "id": "d3c551dd-5903-4194-b153-04ced9d29a2c",
+      "publisher": "Microsoft",
+      "name": "India Tax Base",
+      "version": "23.5.16502.16757"
+    },
+    
+   {
+    "id": "c1eafb3f-e397-468e-bdb4-ecc5c317ca00",
+    "publisher": "Microsoft",
+    "name": "Tax Engine",
+    "version": "23.5.16502.16757"
+  },
+  {
+    "id": "f1d9b696-156b-4251-b542-34e549fa80e9",
+    "publisher": "Microsoft",
+    "name": "India Voucher Interface",
+    "version": "23.5.16502.16757"
+  },
+
+    {
+      "id": "a2cc2ef8-949f-43d4-45b8-10bd6f8bc62c",
+      "publisher": "Microsoft",
+      "name": "API Reports - Finance",
+      "version": "23.5.16502.16757"
+    }
+  ,
+  {
+      "id": "bb32b92f-44eb-471d-b7a8-7cb7ace04046",
+      "publisher": "SFPL",
+      "name": "Sampoorna_BC",
+      "version": "1.0.0.1"
+    }
+  
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "23.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 60000
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+    "runtime": "12.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

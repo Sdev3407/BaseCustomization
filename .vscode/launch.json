@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+        
+            "type": "al",
+            "request": "launch",
+             "name": "Your own server",
+            "server": "http://localhost", 
+            "serverInstance": "HANDY",    
+            "port": 1022, 
+        //    "server": "https://bc.sampoornafeeds.in/",
+        //    "serverInstance": "BCTEST",    
+        //    "port": 2027,
+        //    "server": "https://bc.sampoornafeeds.in/",
+        //    "serverInstance": "BC230",    
+        //    "port": 2088,
+
+        "startupCompany": "Sampoorna Feeds Pvt. Ltd",
+        //"startupCompany": "Star Foods",
+        
+           "authentication": "UserPassword",
+           //"authentication":"Windows",
+            "startupObjectId": 9006,
+            "startupObjectType":"Page",
+            "breakOnError": true,
+            "launchBrowser": true, 
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "schemaUpdateMode":"Synchronize"   
+        }
+        
+    ]
+}
