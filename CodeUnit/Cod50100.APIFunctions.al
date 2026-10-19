@@ -4944,54 +4944,54 @@ codeunit 50100 "API Functions"
             until VendorLedgerEntry.Next() = 0;
     end;
 
-    [ServiceEnabled]
-    procedure GetItemMovementSummary(StartDate: Date; EndDate: Date): Text
-    var
-        SqlConn: DotNet SqlConnection;
-        SqlCmd: DotNet SqlCommand;
-        SqlReader: DotNet SqlDataReader;
-        ConnString: Text;
-        JsonText: Text;
-        JsonArray: JsonArray;
-        JsonObject: JsonObject;
-        Base64Conv: Codeunit "Base64 Convert";
-    begin
-        ConnString := 'Server=10.10.32.204,1433;Database=BC23;Integrated Security=True;TrustServerCertificate=True;';
-        SqlConn := SqlConn.SqlConnection(ConnString);
-        SqlConn.Open();
+    // [ServiceEnabled]
+    // procedure GetItemMovementSummary(StartDate: Date; EndDate: Date): Text
+    // var
+    //     SqlConn: DotNet SqlConnection;
+    //     SqlCmd: DotNet SqlCommand;
+    //     SqlReader: DotNet SqlDataReader;
+    //     ConnString: Text;
+    //     JsonText: Text;
+    //     JsonArray: JsonArray;
+    //     JsonObject: JsonObject;
+    //     Base64Conv: Codeunit "Base64 Convert";
+    // begin
+    //     ConnString := 'Server=10.10.32.204,1433;Database=BC23;Integrated Security=True;TrustServerCertificate=True;';
+    //     SqlConn := SqlConn.SqlConnection(ConnString);
+    //     SqlConn.Open();
 
-        SqlCmd := SqlCmd.SqlCommand('dbo.ItemMovementSummary', SqlConn);
-        SqlCmd.CommandType := SqlCmd.CommandType.StoredProcedure;
-        SqlCmd.Parameters.AddWithValue('@StartDate', StartDate);
-        SqlCmd.Parameters.AddWithValue('@EndDate', EndDate);
+    //     SqlCmd := SqlCmd.SqlCommand('dbo.ItemMovementSummary', SqlConn);
+    //     SqlCmd.CommandType := SqlCmd.CommandType.StoredProcedure;
+    //     SqlCmd.Parameters.AddWithValue('@StartDate', StartDate);
+    //     SqlCmd.Parameters.AddWithValue('@EndDate', EndDate);
 
-        SqlReader := SqlCmd.ExecuteReader();
+    //     SqlReader := SqlCmd.ExecuteReader();
 
-        // JsonArray := JsonArray.Create();
+    //     // JsonArray := JsonArray.Create();
 
-        while SqlReader.Read() do begin
-            Clear(JsonObject);
-            JsonObject.Add('ItemNo', SqlReader.GetString(0));
-            JsonObject.Add('Description', SqlReader.GetString(1));
-            JsonObject.Add('BaseUoM', SqlReader.GetString(2));
-            JsonObject.Add('OpeningQty', Format(SqlReader.GetDecimal(3)));
-            JsonObject.Add('OpeningValue', Format(SqlReader.GetDecimal(4)));
-            JsonObject.Add('IncreasesQty', Format(SqlReader.GetDecimal(5)));
-            JsonObject.Add('IncreasesValue', Format(SqlReader.GetDecimal(6)));
-            JsonObject.Add('DecreasesQty', Format(SqlReader.GetDecimal(7)));
-            JsonObject.Add('DecreasesValue', Format(SqlReader.GetDecimal(8)));
-            JsonObject.Add('ClosingQty', Format(SqlReader.GetDecimal(9)));
-            JsonObject.Add('ClosingValue', Format(SqlReader.GetDecimal(10)));
-            JsonArray.Add(JsonObject);
-        end;
+    //     while SqlReader.Read() do begin
+    //         Clear(JsonObject);
+    //         JsonObject.Add('ItemNo', SqlReader.GetString(0));
+    //         JsonObject.Add('Description', SqlReader.GetString(1));
+    //         JsonObject.Add('BaseUoM', SqlReader.GetString(2));
+    //         JsonObject.Add('OpeningQty', Format(SqlReader.GetDecimal(3)));
+    //         JsonObject.Add('OpeningValue', Format(SqlReader.GetDecimal(4)));
+    //         JsonObject.Add('IncreasesQty', Format(SqlReader.GetDecimal(5)));
+    //         JsonObject.Add('IncreasesValue', Format(SqlReader.GetDecimal(6)));
+    //         JsonObject.Add('DecreasesQty', Format(SqlReader.GetDecimal(7)));
+    //         JsonObject.Add('DecreasesValue', Format(SqlReader.GetDecimal(8)));
+    //         JsonObject.Add('ClosingQty', Format(SqlReader.GetDecimal(9)));
+    //         JsonObject.Add('ClosingValue', Format(SqlReader.GetDecimal(10)));
+    //         JsonArray.Add(JsonObject);
+    //     end;
 
-        SqlReader.Close();
-        SqlConn.Close();
+    //     SqlReader.Close();
+    //     SqlConn.Close();
 
-        JsonArray.WriteTo(JsonText);
+    //     JsonArray.WriteTo(JsonText);
 
-        exit(Base64Conv.ToBase64(JsonText));
-    end;
+    //     exit(Base64Conv.ToBase64(JsonText));
+    // end;
 
     [ServiceEnabled]
     procedure GetPendingMRNExcel(Branch: Code[100]; sfpluserID: Text[20]): Text
@@ -5395,7 +5395,7 @@ codeunit 50100 "API Functions"
         RecordLink: Record "Record Link";
 
 
-procedure RemoveDuplicateGSTLedgerEntries(DocumentNoFilter: Code[20]; IsPreviewMode: Boolean): Integer
+    procedure RemoveDuplicateGSTLedgerEntries(DocumentNoFilter: Code[20]; IsPreviewMode: Boolean): Integer
     var
         DetailedGSTLedgerEntry: Record "Detailed GST Ledger Entry";
         LastDocumentNo: Code[20];
@@ -5419,7 +5419,7 @@ procedure RemoveDuplicateGSTLedgerEntries(DocumentNoFilter: Code[20]; IsPreviewM
                 if (DetailedGSTLedgerEntry."Document No." = LastDocumentNo) and
                    (DetailedGSTLedgerEntry."Document Line No." = LastDocumentLineNo) and
                    (DetailedGSTLedgerEntry."GST Component Code" = LastGSTComponentCode) then begin
-                    
+
                     // Duplicate found: Skip first record, delete subsequent duplicate records
                     if not IsPreviewMode then
                         DetailedGSTLedgerEntry.Delete(false);
