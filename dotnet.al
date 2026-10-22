@@ -9,16 +9,16 @@ dotnet
     //     type("Microsoft.Dynamics.Nav.NavSMSHelper.SMSClient"; SmsClient)
     //     { }
     // }
-    assembly("Microsoft.Dynamics.Nav.MX")
-    {
-        Version = '23.0.0.0';
-        Culture = 'neutral';
-        PublicKeyToken = '31bf3856ad364e35';
+    // assembly("Microsoft.Dynamics.Nav.MX")
+    // {
+    //     Version = '23.0.0.0';
+    //     Culture = 'neutral';
+    //     PublicKeyToken = '31bf3856ad364e35';
 
-        type("Microsoft.Dynamics.Nav.MX.BarcodeProviders.QRCodeProvider"; "QRCodeProvider")
-        {
-        }
-    }
+    //     type("Microsoft.Dynamics.Nav.MX.BarcodeProviders.QRCodeProvider"; "QRCodeProvider")
+    //     {
+    //     }
+    // }
     assembly(System)
     {
         //  Version = '4.0.0.0';
@@ -60,17 +60,17 @@ dotnet
 
     }
 
-    assembly("Microsoft.Data.SqlClient")
-    {
-        Version = '5.0.0.0';
-        Culture = 'neutral';
-        PublicKeyToken = '23ec7fc2d6eaa4a5';
+    // assembly("Microsoft.Data.SqlClient")
+    // {
+    //     Version = '5.0.0.0';
+    //     Culture = 'neutral';
+    //     PublicKeyToken = '23ec7fc2d6eaa4a5';
 
-        type("Microsoft.Data.SqlClient.SqlConnection"; SqlConnection) { }
-        type("Microsoft.Data.SqlClient.SqlCommand"; SqlCommand) { }
-        type("Microsoft.Data.SqlClient.SqlDataReader"; SqlDataReader) { }
-        type("Microsoft.Data.SqlClient.SqlParameter"; SqlParameter) { }
-    }
+    //     type("Microsoft.Data.SqlClient.SqlConnection"; SqlConnection) { }
+    //     type("Microsoft.Data.SqlClient.SqlCommand"; SqlCommand) { }
+    //     type("Microsoft.Data.SqlClient.SqlDataReader"; SqlDataReader) { }
+    //     type("Microsoft.Data.SqlClient.SqlParameter"; SqlParameter) { }
+    // }
 
 
     // assembly(WebRequest_1)
