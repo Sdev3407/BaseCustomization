@@ -8,6 +8,7 @@ pageextension 50256 "VendorCard_Ex" extends "Vendor Card"
             var
 
                 UpdatePANDetailsFromPortal: Codeunit BaseModificationCodeunitt;
+                P: Page "Vendor Card";
             begin
                 CompanyInfo.Get;
                 if (Rec."P.A.N. No." <> '') and (rec."P.A.N. Status" = rec."P.A.N. Status"::" ") then begin
